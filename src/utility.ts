@@ -1,7 +1,3 @@
-'use strict';
-
-// 汎用関数
-
 import {
     TextEditor,
     workspace,
@@ -13,7 +9,6 @@ import * as _ from './common';
 
 const CONFIG_TITLE: string = 'jumpToHint';
 
-// 設定の読み込み
 export function getUserSetting(): _.UserSetting {
     let setting: _.UserSetting = {
         common: {
@@ -61,15 +56,12 @@ export function getUserSetting(): _.UserSetting {
     return setting;
 }
 
-// ステートの更新
 export function updateState(status: _.ExtensionStatus, state: _.ExtensionState) {
     status.state = state;
-    // 独自Contextの設定
     let f = (state == _.ExtensionState.NotActive) ? false : true;
     commands.executeCommand('setContext', 'jumpToHint.enabled', f);
 }
 
-// 表示先の取得
 export function getTargetTextEditorList(setting: _.UserSetting): TextEditor[] {
     let list: TextEditor[] = [];
     switch (setting.common.targetType) {
@@ -79,7 +71,7 @@ export function getTargetTextEditorList(setting: _.UserSetting): TextEditor[] {
             }
             break;
         case _.TargetTextEditorType.VisibleTextEditors:
-            list = window.visibleTextEditors;
+            list = [...window.visibleTextEditors];
             break;
     }
     return list;

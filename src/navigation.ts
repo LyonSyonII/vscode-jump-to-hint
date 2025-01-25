@@ -1,7 +1,3 @@
-'use strict';
-
-// 入力処理
-
 import {
     Selection, window, TextEditor, Position
 } from 'vscode';

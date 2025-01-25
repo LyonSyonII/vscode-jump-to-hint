@@ -1,7 +1,3 @@
-'use strict';
-
-// ヒント位置
-
 import {
     Position,
     Range,

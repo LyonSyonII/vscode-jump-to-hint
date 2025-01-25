@@ -1,7 +1,3 @@
-'use strict';
-
-// ヒント表示
-
 import {
     Position,
     Range,

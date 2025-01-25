@@ -1,7 +1,3 @@
-'use strict';
-
-// Enumや構造体
-
 import {
     Disposable,
     Position,
