@@ -2,12 +2,12 @@
     "name": "vscode-jump-to-hint",
     "displayName": "Jump to Hint",
     "description": "Show hints and hit a key to jump to it.",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "publisher": "shuworks",
     "author": "Shuzo Iwasaki <shu.works.7@gmail.com>",
     "license": "MIT",
     "engines": {
-        "vscode": "^1.46.0"
+        "vscode": "^1.96.0"
     },
     "categories": [
         "Other"
@@ -147,12 +147,13 @@
                 "jumpToHint.theme.highlightColor": {
                     "type": "string",
                     "default": "blue",
-                    "description": "[Serch command only] highlight color of matched text."
+                    "description": "[Search command only] highlight color of matched text."
                 }
             }
         }
     },
     "scripts": {
+        "vscode:publish": "vsce package",
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "lint": "eslint src",
@@ -166,14 +167,14 @@
         "@types/mocha": "^10.0.10",
         "@types/node": "^22.10.10",
         "@types/vscode": "^1.96.0",
-        "typescript-eslint": "^8.21.0",
+        "@vscode/test-electron": "^2.4.1",
         "eslint": "^9.19.0",
         "glob": "^11.0.1",
         "mocha": "^11.1.0",
         "typescript": "^5.7.3",
-        "@vscode/test-electron": "^2.4.1"
+        "typescript-eslint": "^8.21.0",
+        "@eslint/js": "^9.19.0",
+        "@vscode/vsce": "^3.2.1"
     },
-    "dependencies": {
-        "@eslint/js": "^9.19.0"
-    }
+    "dependencies": {}
 }

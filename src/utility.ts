@@ -10,7 +10,7 @@ import * as _ from './common';
 const CONFIG_TITLE: string = 'jumpToHint';
 
 export function getUserSetting(): _.UserSetting {
-    let setting: _.UserSetting = {
+    const setting: _.UserSetting = {
         common: {
             wordRegExp: new RegExp(''),
             lineRegExp: new RegExp(''),
@@ -58,7 +58,7 @@ export function getUserSetting(): _.UserSetting {
 
 export function updateState(status: _.ExtensionStatus, state: _.ExtensionState) {
     status.state = state;
-    let f = (state == _.ExtensionState.NotActive) ? false : true;
+    const f = (state == _.ExtensionState.NotActive) ? false : true;
     commands.executeCommand('setContext', 'jumpToHint.enabled', f);
 }
 

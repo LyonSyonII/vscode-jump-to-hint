@@ -1,7 +1,5 @@
 # VSCode Jump to Hint
 
-[![codebeat badge](https://codebeat.co/badges/244b32bb-5c46-4e45-bbcd-fd59475c0df7)](https://codebeat.co/a/shuzo-iwasaki/projects/github-com-shugh-vscode-jump-to-hint-master) [![Latest Release](https://vsmarketplacebadge.apphb.com/version-short/shuworks.vscode-jump-to-hint.svg)](https://marketplace.visualstudio.com/items?itemName=shuworks.vscode-jump-to-hint) [![Installs](https://vsmarketplacebadge.apphb.com/installs/shuworks.vscode-jump-to-hint.svg)](https://marketplace.visualstudio.com/items?itemName=shuworks.vscode-jump-to-hint) [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/shuworks.vscode-jump-to-hint.svg)](https://marketplace.visualstudio.com/items?itemName=shuworks.vscode-jump-to-hint#review-details) [![Licence](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/shuGH/vscode-jump-to-hint/blob/master/LICENSE.md)
-
 Jump to Hint is a extention package for the Visual Studio Code to move cursor by simple and visual operation.
 
 ![demo](https://raw.githubusercontent.com/shuGH/vscode-jump-to-hint/master/res/demo.gif)

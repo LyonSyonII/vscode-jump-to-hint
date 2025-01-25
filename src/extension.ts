@@ -13,9 +13,9 @@ import * as deco from './decoration';
 import * as nav from './navigation';
 
 export function activate(context: ExtensionContext) {
-    let status = new _.ExtensionStatus();
+    const status = new _.ExtensionStatus();
 
-    let wordCommandDisposable = commands.registerTextEditorCommand(
+    const wordCommandDisposable = commands.registerTextEditorCommand(
         'jumpToHint.jumpByWord',
         (textEditor: TextEditor, edit: TextEditorEdit) => {
             const setting = util.getUserSetting();
@@ -25,7 +25,7 @@ export function activate(context: ExtensionContext) {
         }
     );
 
-    let lineCommandDisposable = commands.registerTextEditorCommand(
+    const lineCommandDisposable = commands.registerTextEditorCommand(
         'jumpToHint.jumpByLine',
         (textEditor: TextEditor, edit: TextEditorEdit) => {
             const setting = util.getUserSetting();
@@ -35,7 +35,7 @@ export function activate(context: ExtensionContext) {
         }
     );
 
-    let searchCommandDisposable = commands.registerTextEditorCommand(
+    const searchCommandDisposable = commands.registerTextEditorCommand(
         'jumpToHint.jumpBySearch',
         (textEditor: TextEditor, edit: TextEditorEdit) => {
             const setting = util.getUserSetting();
@@ -45,25 +45,25 @@ export function activate(context: ExtensionContext) {
         }
     );
 
-    let undoCommandDisposable = commands.registerTextEditorCommand(
+    const undoCommandDisposable = commands.registerTextEditorCommand(
         'jumpToHint.undo',
         (textEditor: TextEditor, edit: TextEditorEdit) => {
             undo(status);
         }
     );
 
-    let cancelCommandDisposable = commands.registerTextEditorCommand(
+    const cancelCommandDisposable = commands.registerTextEditorCommand(
         'jumpToHint.cancel',
         (textEditor: TextEditor, edit: TextEditorEdit) => {
             exit(status);
         }
     );
 
-    let onDidChangeActiveDisposable = window.onDidChangeActiveTextEditor((ev) => {
+    const onDidChangeActiveDisposable = window.onDidChangeActiveTextEditor((ev) => {
         exit(status);
     });
 
-    let onDidChangeVisibleRangesDisposable = window.onDidChangeTextEditorVisibleRanges((ev) => {
+    const onDidChangeVisibleRangesDisposable = window.onDidChangeTextEditorVisibleRanges((ev) => {
         exit(status);
     });
 
@@ -104,7 +104,7 @@ function subscribeTypeEvent(
 }
 
 function subscribeTypeEventByCommand(status: _.ExtensionStatus) {
-    let typeCommandDisposable = commands.registerTextEditorCommand(
+    const typeCommandDisposable = commands.registerTextEditorCommand(
         'type',
         (textEditor: TextEditor, edit: TextEditorEdit, event: { text: string }) => {
             switch (status.state) {
@@ -226,7 +226,7 @@ function setHintCharacter(status: _.ExtensionStatus, text: string) {
 }
 
 function tryNavigationOrApplyDecoration(status: _.ExtensionStatus, isExitEnabled: boolean): boolean {
-    let capability = nav.getNavigationCapability(status.labelList, status.inputLabel);
+    const capability = nav.getNavigationCapability(status.labelList, status.inputLabel);
 
     switch (capability) {
         case _.NavigationCapability.CanNavigate:

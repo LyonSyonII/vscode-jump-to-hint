@@ -9,7 +9,7 @@ export function applyNavigationByPosition(status: _.ExtensionStatus): boolean {
 
 export function applyNavigationByRange(status: _.ExtensionStatus): boolean {
     // ヒント位置に変換する
-    let positionList = status.rangeList.map((l, i) => {
+    const positionList = status.rangeList.map((l, i) => {
         return l.map((r) => { return r.start; });
     });
     return applyNavigation(status.inputLabel, status.targetEditorList, status.labelList, positionList);
@@ -17,15 +17,15 @@ export function applyNavigationByRange(status: _.ExtensionStatus): boolean {
 
 function applyNavigation(inputLabel: string, targetEditorList: TextEditor[], labelList: string[][], positionList: Position[][]): boolean {
     for (let i = 0; i <= labelList.length; i++) {
-        let list = labelList[i];
+        const list = labelList[i];
 
         // 一致するものがあるか
-        let index = list.indexOf(inputLabel);
+        const index = list.indexOf(inputLabel);
         if (index < 0) continue;
 
-        let pos = positionList[i][index];
+        const pos = positionList[i][index];
         if (!pos) return false;
-        let target = targetEditorList[i];
+        const target = targetEditorList[i];
         if (!target) return false;
 
         // フォーカス移動
@@ -63,7 +63,7 @@ export function getNavigationCapability(labelList: string[][], inputLabel: strin
     if (f) return _.NavigationCapability.CanNavigate;
 
     // 先頭から一致するものがあるか
-    let re = new RegExp('^' + inputLabel + '.*', 'i');
+    const re = new RegExp('^' + inputLabel + '.*', 'i');
     labelList.forEach((l) => {
         l.forEach((label) => {
             f = f || (re.test(label));
